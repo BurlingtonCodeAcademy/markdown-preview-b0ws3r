@@ -1,9 +1,12 @@
-let renderableContent = document.getElementById('source');
+
 let renderBtn = document.getElementById('render');
 
-renderBtn.addEventListener('click',renderContent);
-
 function renderContent(){
-    console.log(renderableContent);
-    renderableContent.innerHTML = marked(renderableContent);
+    // console.log(renderableContent);
+    let renderableContent = document.getElementById('source');
+    let renderedContent = document.getElementById('preview');
+    
+    renderedContent.innerHTML = marked(renderableContent.textContent);
+    
 }
+renderBtn.addEventListener('click',renderContent);
